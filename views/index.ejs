@@ -1,0 +1,39 @@
+<%- include("partials/header"); -%>
+
+    <header class="masthead" style="background-image:url('assets/img/home-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="site-heading">
+                        <h1>Blog</h1><span class="subheading">A Blog by students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+              <%  p.forEach(function(po){ %>
+
+                <div class="post-preview"><a href="/post/<%=po.postid%>">
+                        <h2 class="post-title"> <%=po.postTitle%> </h2>
+                        <h3 class="post-subtitle"><%=po.postSubtitle%> </h3>
+                    </a>
+                    <p class="post-meta">Posted by&nbsp;<a href="#">By User: <%=uid %> </a></p>
+                    <a href="/delete/<%=po.postid%>"><button class="btn btn-primary" name="button">Delete</button></a>
+                </div>
+                <hr>
+                <% }) %>
+        </div>
+    </div>
+
+<%- include("partials/footer"); -%>
+
+    <script src="public/assets/js/jquery.min.js"></script>
+    <script src="puclic/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/assets/js/clean-blog.js"></script>
+</body>
+
+</html>
